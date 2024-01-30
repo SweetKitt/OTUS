@@ -25,6 +25,8 @@ PRIME = "prime"
 
 def is_prime(n):
     k = 0
+    if n < 2:
+        return False
     for i in range(2, n // 2 + 1):
         if (n % i == 0):
             k = k + 1
@@ -38,7 +40,7 @@ def filter_numbers(numbers, filter_type=None):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
-    (выбор производится передачей дополнительного аргумента)
+    (выбор производится передачей дополнительного аргcompleted homework 01умента)
 
     >>> filter_numbers([1, 2, 3], ODD)
     <<< [1, 3]
@@ -58,5 +60,5 @@ def filter_numbers(numbers, filter_type=None):
     elif filter_type == PRIME:
         return list(filter(is_prime, numbers))
 
-
+print(filter_numbers([0,1,2,3,4,5,6,7,8,9,10,11], PRIME))
 
