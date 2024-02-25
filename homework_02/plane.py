@@ -3,11 +3,10 @@ from homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
-    cargo = 0
-    max_cargo = 1000
 
-    def __init__(self, max_cargo, weight, fuel, fuel_consumption):
+    def __init__(self, weight, fuel=0, fuel_consumption=1, max_cargo=0):
         super().__init__(weight, fuel, fuel_consumption)
+        self.cargo = 0
         self.max_cargo = max_cargo
 
     def load_cargo(self, cargo_plus):
